@@ -4,6 +4,7 @@ package com.ryan.netty.discard.handler;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
 import io.netty.util.ReferenceCountUtil;
 
@@ -16,7 +17,7 @@ import io.netty.util.ReferenceCountUtil;
  * @author lr
  * @date 2018/5/3.
  */
-public class DiscardServerHandler extends ChannelHandlerAdapter {
+public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
     /**
      * 这里我们覆盖了chanelRead()事件处理方法。 每当从客户端收到新的数据时， 这个方法会在收到消息时被调用，
      * 这个例子中，收到的消息的类型是ByteBuf
